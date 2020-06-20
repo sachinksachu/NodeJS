@@ -1,7 +1,4 @@
-var rect = {
-    area : (x,y) => ( 2*(x+y) ),
-    perimeter : (x,y) => (x*y)
-};
+var rect = require('./rect');
 
 function calc(x,y){
 
