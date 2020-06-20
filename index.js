@@ -1,9 +1,18 @@
 var rect = require('./rect');
 
-function calc(x,y){
+function calc(l,b){
+    console.log("Solving for rectangle with l = "
+                + l + " and b = " + b);
+    rect(l,b, (err,rect) => {
+        if (err) {
+	        console.log("ERROR: ", err.message);
+	    }
+        else {
+            console.log("area rectangle dimensions l = " + l + " and b = " + b + " is " + rect.area());
+            console.log("perimeter rectangle dimensions l = " + l + " and b = " + b + " is " + rect.perimeter());
+        }
+    });
+    console.log("This statement after the call to rect()");
+};
 
-    console.log("rectangle area:" +rect.area(x,y));
-    console.log("rectangle perimeter:" +rect.perimeter(x,y));
-}
-
-calc(4,5);
+calc(-4,5);
